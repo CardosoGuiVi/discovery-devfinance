@@ -1,0 +1,141 @@
+:root {
+    --white: white;
+    --bg-color: #F0F2F5;
+    --logo-bg-color: #2D4A22;
+    --titles-color: #363f5f;
+    --card-total: #49AA26;
+    --table-color-head: #969CB3;
+    --table-color-row-hover: #dbdcdf;
+    --color-income: #12A453;
+    --color-expense: #E92929;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background: var(--bg-color);
+    font-family: 'Poppins', sans-serif;
+}
+
+.container {
+    width: min(90vw, 800px);
+    margin: auto;
+}
+
+/* Titles */
+h2 {
+    margin-top: 3.2rem;
+    margin-bottom: 0.8rem;
+    color: var(--titles-color);
+    font-weight: normal;
+}
+
+/* Header */
+header {
+    background: var(--logo-bg-color);
+    padding: 2rem 0 10rem;
+    text-align: center;
+}
+
+#logo {
+    color: var(--white);
+    font-weight: 100;
+}
+
+/* Balance */
+#balance {
+    margin-top: -8rem;
+}
+
+#balance h2 {
+    color: var(--white);
+    margin-top: 0;
+}
+
+/* Cards */
+.card {
+    background: var(--white);
+    padding: 1.5rem 2rem;
+    border-radius: 0.25rem;
+    margin-bottom: 2rem;
+    color: var(--titles-color);
+}
+
+.card h3 {
+    font-weight: normal;
+    font-size: 1rem;
+}
+
+.card p {
+    font-size: 2rem;
+    line-height: 3rem;
+    margin-top: 1rem;
+}
+
+.card.total {
+    background: var(--card-total);
+    color: var(--white);
+}
+
+/* Table */
+#data-table {
+    width: 100%;
+    border-spacing: 0 0.5rem;
+    color: var(--table-color-head);
+}
+
+table thead tr th:first-child,
+table tbody tr td:first-child {
+    border-radius: .25rem 0 0 .25rem;
+}
+
+table thead tr th:last-child,
+table tbody tr td:last-child {
+    border-radius: 0 .25rem .25rem 0;
+}
+
+table thead th {
+    background: var(--white);
+    font-weight: normal;
+    padding: 1rem 2rem;
+    text-align: left;
+}
+
+table tbody tr {
+    background: var(--white);
+    transition: opacity 200ms, background 300ms;
+    opacity: .7;
+}
+
+table tbody tr:hover {
+    opacity: 1;
+    background: var(--table-color-row-hover);
+}
+
+table tbody td {
+    padding: 1rem 2rem;
+}
+
+td.description {
+    color: var(--titles-color);
+}
+
+td.income {
+    color: var(--color-income);
+}
+
+td.expense {
+    color: var(--color-expense);
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 4rem 0 2rem;
+    color: var(--titles-color);
+    opacity: .6;
+}
