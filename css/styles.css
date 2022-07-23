@@ -5,9 +5,10 @@
     --titles-color: #363f5f;
     --card-total: #49AA26;
     --table-color-head: #969CB3;
-    --table-color-row-hover: #dbdcdf;
+    --table-color-row-hover: #DBDCDF;
     --color-income: #12A453;
     --color-expense: #E92929;
+    --color-link-hover: #3DD705;
 }
 
 * {
@@ -16,9 +17,25 @@
     box-sizing: border-box;
 }
 
+html {
+    font-size: 93.75%;
+}
+
 body{
     background: var(--bg-color);
     font-family: 'Poppins', sans-serif;
+}
+
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
 }
 
 .container {
@@ -32,6 +49,56 @@ h2 {
     margin-bottom: 0.8rem;
     color: var(--titles-color);
     font-weight: normal;
+}
+
+/* Links and Buttons */
+a {
+    color: var(--card-total);
+    text-decoration: none;
+}
+
+a:hover {
+    color: var(--color-link-hover);
+}
+
+.button.new {
+    display: inline-block;
+    margin-bottom: .8rem;
+}
+
+button {
+    width: 100%;
+    height: 50px;
+    border: none;
+    color: var(--white);
+    background: var(--card-total);
+    padding: 0;
+    border-radius: .25rem;
+    cursor: pointer;
+}
+
+button:hover {
+    background: var(--color-link-hover);
+}
+
+.button.new {
+    display: inline-block;
+    margin-bottom: .8rem;
+}
+
+.button.cancel {
+    color: var(--color-expense);
+    border: 2px var(--color-expense) solid;
+    border-radius: .25rem;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0.6;
+}
+
+.button.cancel:hover {
+    opacity: 1;
 }
 
 /* Header */
@@ -68,6 +135,9 @@ header {
 .card h3 {
     font-weight: normal;
     font-size: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 
 .card p {
@@ -79,6 +149,13 @@ header {
 .card.total {
     background: var(--card-total);
     color: var(--white);
+}
+
+/* Transaction */
+#transaction {
+    width: 100%;
+    display: block;
+    overflow-x: auto;
 }
 
 /* Table */
@@ -132,10 +209,87 @@ td.expense {
     color: var(--color-expense);
 }
 
+/* Modal */
+.modal-overlay {
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, .7);
+    position: fixed;
+    top: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    visibility: hidden;
+    z-index: 1;
+    backdrop-filter: blur(4px);
+}
+
+.modal-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.modal {
+    border-radius: .25em;
+    background: var(--bg-color);
+    padding: 2.4rem;
+    position: relative;
+    z-index: 1;
+}
+
+/* Form */
+#form {
+    max-width: 500px;
+}
+
+#form h2 {
+    margin-top: 0;
+}
+
+#form form input {
+    border: none;
+    border-radius: 0.2rem;
+    padding: .8rem;
+    width: 100%;
+}
+
+.input-group {
+    margin-top: .8rem;
+}
+
+.input-group small {
+    opacity: .4;
+}
+
+.input-group.actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.input-group.actions .button,
+.input-group.actions button {
+    width: 48%;
+}
+
 /* Footer */
 footer {
     text-align: center;
     padding: 4rem 0 2rem;
     color: var(--titles-color);
     opacity: .6;
+}
+
+/* Responsive */
+@media (min-width: 800px) {
+    html {
+        font-size: 87.5%;
+    }
+
+    #balance {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-gap: 2rem;
+    }
 }
