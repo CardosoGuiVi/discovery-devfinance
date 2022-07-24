@@ -67,6 +67,8 @@ a:hover {
 }
 
 button {
+    font-family: 'Poppins', sans-serif;
+    font-size: 100%;
     width: 100%;
     height: 50px;
     border: none;
@@ -223,6 +225,7 @@ td.expense {
     visibility: hidden;
     z-index: 1;
     backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
 }
 
 .modal-overlay.active {
@@ -235,7 +238,7 @@ td.expense {
     background: var(--bg-color);
     padding: 2.4rem;
     position: relative;
-    z-index: 1;
+    /* z-index: 1; */
 }
 
 /* Form */
@@ -252,6 +255,7 @@ td.expense {
     border-radius: 0.2rem;
     padding: .8rem;
     width: 100%;
+    background: var(--white);
 }
 
 .input-group {
@@ -260,6 +264,11 @@ td.expense {
 
 .input-group small {
     opacity: .4;
+}
+
+.input-group#date {
+    display: flex;
+    align-items: center;
 }
 
 .input-group.actions {
@@ -279,6 +288,7 @@ footer {
     padding: 4rem 0 2rem;
     color: var(--titles-color);
     opacity: .6;
+    /* z-index: -1; */
 }
 
 /* Responsive */
