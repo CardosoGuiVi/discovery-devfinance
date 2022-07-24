@@ -223,7 +223,7 @@ td.expense {
     justify-content: center;
     opacity: 0;
     visibility: hidden;
-    z-index: 1;
+    z-index: 2;
     backdrop-filter: blur(4px);
     -webkit-backdrop-filter: blur(4px);
 }
@@ -238,7 +238,6 @@ td.expense {
     background: var(--bg-color);
     padding: 2.4rem;
     position: relative;
-    /* z-index: 1; */
 }
 
 /* Form */
@@ -266,9 +265,10 @@ td.expense {
     opacity: .4;
 }
 
-.input-group#date {
-    display: flex;
-    align-items: center;
+.input-group.mobile {
+    display: block;
+    -webkit-appearance: textfield;
+    -moz-appearance: textfield;
 }
 
 .input-group.actions {
