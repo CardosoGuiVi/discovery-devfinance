@@ -28,6 +28,8 @@ const Transactions = {
 
     remove(index) {
         Transactions.all.splice(index, 1);
+
+        App.reload();
     },
 
     incomes() {
